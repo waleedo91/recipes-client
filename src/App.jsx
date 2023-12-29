@@ -1,15 +1,23 @@
-// import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import HeaderComponent from "./components/HeaderComponent";
+import { HeaderComponent } from "./components/HeaderComponent";
+import { HomePage } from "./components/home/HomePage";
+import { FooterComponent } from "./components/FooterComponent";
+import { ListRecipes } from "./components/listRecipe/ListRecipes";
 
 import "./App.css";
-import { FooterComponent } from "./components/FooterComponent";
 
 function App() {
   return (
     <>
-      <HeaderComponent />
-      <FooterComponent />
+      <BrowserRouter>
+        <HeaderComponent />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/recipes" element={<ListRecipes />} />
+        </Routes>
+        {/* <FooterComponent /> */}
+      </BrowserRouter>
     </>
   );
 }

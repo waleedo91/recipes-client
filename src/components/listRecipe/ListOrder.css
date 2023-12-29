@@ -1,0 +1,8 @@
+.recipe-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recipe-card {
+  margin: 20px 15px;
+}
